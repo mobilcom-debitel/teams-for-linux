@@ -12,15 +12,13 @@ const Menus = require('./menus.js');
 
 let menus;
 
-
 app.on('ready', () => {
-  const iconPath = path.join(app.getAppPath(), 'lib/assets/icons/icon-96x96.png');
+  const iconPath = path.join(__dirname, 'assets/icons/icon-96x96.png');
   const window = new BrowserWindow({
-    width: 800,
-    height: 600,
-    iconPath,
+    width: 1024,
+    height: 800,
     autoHideMenuBar: true,
-
+    icon: iconPath,
     webPreferences: {
       partition: 'persist:teams',
       preload: path.join(__dirname, 'browser', 'index.js'),

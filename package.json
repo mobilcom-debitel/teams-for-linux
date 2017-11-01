@@ -17,11 +17,12 @@
     "start": "electron ./app",
     "start-debug": "WEB_DEBUG=1 electron --disable-http-cache ./app",
     "pack": "build --dir",
-    "dist": "build"
+    "dist": "build",
+    "postinstall": "(cd app; npm install)"
   },
   "devDependencies": {
-    "electron": "^1.4.15",
-    "electron-builder": "^13.11.1"
+    "electron": "^1.7.9",
+    "electron-builder": "^19.43.0"
   },
   "build": {
     "appId": "teams-for-linux",
@@ -39,11 +40,11 @@
       },
       "target": [
         "tar.gz",
-        "deb",
-        "rpm",
-        "pacman"
+        "deb"
       ]
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "rpmbuild": "0.0.22"
+  }
 }
